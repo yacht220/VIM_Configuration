@@ -85,7 +85,7 @@ if myterm == "xterm" || myterm == "kvt" || myterm == "gnome"
     map! <ESC>Om  -
     map! <ESC>Ok  +
     map! <ESC>Ol  ,
-    map! <ESC>OM  
+    map! <ESC>OM  <Enter>
     map! <ESC>Ow  7
     map! <ESC>Ox  8
     map! <ESC>Oy  9
@@ -103,7 +103,7 @@ if myterm == "xterm" || myterm == "kvt" || myterm == "gnome"
     map <ESC>Om  -
     map <ESC>Ok  +
     map <ESC>Ol  ,
-    map <ESC>OM  
+    map <ESC>OM  <Enter>
     map <ESC>Ow  7
     map <ESC>Ox  8
     map <ESC>Oy  9
