@@ -1,12 +1,21 @@
-#!/bin/sh 
+#!/bin/sh
+TARGET_DIR="./installers/ "
+TARGET_DIR+="./plugins/ "
+TARGET_DIR+="./src/ "
+#TARGET_DIR+="./avpx/ "
+#TARGET_DIR+="./external/ "
+#TARGET_DIR+="./external/3rdparty/ "
+#TARGET_DIR+="./qaclient-irv/ "
+TARGET_DIR+="./external/3rdparty/backupboost/ "
+TARGET_DIR+="./external/3rdparty/google/ "
 
-TARGET_DIR="/vob/tetra/su_vris_mcore/ "
-TARGET_DIR+="/vob/tetra/su_applic/ "
-TARGET_DIR+="/vob/tetra/su_ras/ "
-TARGET_DIR+="/vob/tetra/su_ergo/ "
-TARGET_DIR+="/vob/tetra/su_core/ "
-TARGET_DIR+="/vob/tetra/su_sig/ "
-TARGET_DIR+="/vob/tetra/su/ "
+#TARGET_DIR="/vob/tetra/su_vris_mcore/ "
+#TARGET_DIR+="/vob/tetra/su_applic/ "
+#TARGET_DIR+="/vob/tetra/su_ras/ "
+#TARGET_DIR+="/vob/tetra/su_ergo/ "
+#TARGET_DIR+="/vob/tetra/su_core/ "
+#TARGET_DIR+="/vob/tetra/su_sig/ "
+#TARGET_DIR+="/vob/tetra/su/ "
 #TARGET_DIR+="/vob/tetra/synergy/ "
 #TARGET_DIR+="/vob/tetra/ngch/ "
 #TARGET_DIR+="/vob/tetra/gcp_lrrp/ "
@@ -23,18 +32,18 @@ TARGET_DIR+="/vob/tetra/su/ "
 
 
 CSCOPE_FLAGS=$TARGET_DIR
-CSCOPE_FLAGS+="-name \"*.h\" -o -name \"*.c\" -o -name \"*.cpp\" -o -name \"*.cc\" -o -name \"*Makefile*\" -o -name \"*.mk\" -o -name \"*.hpp\" -o -name \"*.inl\""
+CSCOPE_FLAGS+="-name \"*.h\" -o -name \"*.c\" -o -name \"*.cpp\" -o -name \"*.cc\" -o -name \"*Makefile*\" -o -name \"*.mk\" -o -name \"*.hpp\" -o -name \"*.inl\" -o -name \"*.xml\" -o -name \"*.pl\" -o -name \"*.pm\" -o -name \"*.inc\" -o -name \"*.py\""
 echo CSCOPE_FLAGS=$CSCOPE_FLAGS
 
 echo $CSCOPE_FLAGS | xargs find > cscope.files
-#echo $CSCOPE_FLAGS | xargs find /vob/tetra/su_vris_mcore/ > cscope.files 
-#echo $CSCOPE_FLAGS | xargs find /vob/tetra/su_applic/ >> cscope.files 
-#echo $CSCOPE_FLAGS | xargs find /vob/tetra/su_ras/ >> cscope.files 
+#echo $CSCOPE_FLAGS | xargs find /vob/tetra/su_vris_mcore/ > cscope.files
+#echo $CSCOPE_FLAGS | xargs find /vob/tetra/su_applic/ >> cscope.files
+#echo $CSCOPE_FLAGS | xargs find /vob/tetra/su_ras/ >> cscope.files
 #echo $CSCOPE_FLAGS | xargs find /vob/tetra/su_ergo/ >> cscope.files
-#echo $CSCOPE_FLAGS | xargs find /vob/tetra/su_core/ >> cscope.files 
-#echo $CSCOPE_FLAGS | xargs find /vob/tetra/su_sig/ >> cscope.files 
-#echo $CSCOPE_FLAGS | xargs find /vob/tetra/su/ >> cscope.files 
-#echo $CSCOPE_FLAGS | xargs find /vob/tetra/synergy/ >> cscope.files 
+#echo $CSCOPE_FLAGS | xargs find /vob/tetra/su_core/ >> cscope.files
+#echo $CSCOPE_FLAGS | xargs find /vob/tetra/su_sig/ >> cscope.files
+#echo $CSCOPE_FLAGS | xargs find /vob/tetra/su/ >> cscope.files
+#echo $CSCOPE_FLAGS | xargs find /vob/tetra/synergy/ >> cscope.files
 #echo $CSCOPE_FLAGS | xargs find /vob/tetra/ngch/ >> cscope.files
 #echo $CSCOPE_FLAGS | xargs find /vob/tetra/gcp_lrrp/ >> cscope.files
 #echo $CSCOPE_FLAGS | xargs find /vob/tetra/gcp_networking/ >> cscope.files
@@ -48,10 +57,10 @@ echo $CSCOPE_FLAGS | xargs find > cscope.files
 #echo $CSCOPE_FLAGS | xargs find /vob/tetra/ssp_bt_mgr/ >> cscope.files
 #echo $CSCOPE_FLAGS | xargs find /vob/tetra/ssp_bt_stack/ >> cscope.files
 
-cscope -bkq -i cscope.files 
+cscope -bkq -i cscope.files
 
 
-CTAGS_FLAGS="-R --c++-kinds=+p --fields=+iaS --extra=+q " 
+CTAGS_FLAGS="-R --c++-kinds=+p --fields=+iaS --extra=+q "
 CTAGS_FLAGS+=$TARGET_DIR
 echo CTAGS_FLAGS=$CTAGS_FLAGS
 
