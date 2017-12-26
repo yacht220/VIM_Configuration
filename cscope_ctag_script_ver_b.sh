@@ -32,7 +32,7 @@ TARGET_DIR+="./external/3rdparty/google/ "
 
 
 CSCOPE_FLAGS=$TARGET_DIR
-CSCOPE_FLAGS+="-name \"*.h\" -o -name \"*.c\" -o -name \"*.cpp\" -o -name \"*.cc\" -o -name \"*Makefile*\" -o -name \"*.mk\" -o -name \"*.hpp\" -o -name \"*.inl\" -o -name \"*.xml\" -o -name \"*.pl\" -o -name \"*.pm\" -o -name \"*.inc\" -o -name \"*.py\""
+CSCOPE_FLAGS+="-name \"*.h\" -o -name \"*.c\" -o -name \"*.cpp\" -o -name \"*.cc\" -o -name \"*Makefile*\" -o -name \"*.mk\" -o -name \"*.hpp\" -o -name \"*.inl\" -o -name \"*.xml\" -o -name \"*.pl\" -o -name \"*.pm\" -o -name \"*.inc\" -o -name \"*.py\" -o -name \"*.java\""
 echo CSCOPE_FLAGS=$CSCOPE_FLAGS
 
 echo $CSCOPE_FLAGS | xargs find > cscope.files

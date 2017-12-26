@@ -75,6 +75,16 @@ let myterm = substitute(myterm, "vt1[0-9][0-9].*$",   "vt100", "")
 let myterm = substitute(myterm, "vt2[0-9][0-9].*$",   "vt220", "")
 let myterm = substitute(myterm, "\\([^-]*\\)[_-].*$", "\\1",   "")
 
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+Plug 'artur-shaik/vim-javacomplete2'
+
+" Initialize plugin system
+call plug#end()
+
 " Here we define the keys of the NumLock in keyboard transmit mode of xterm
 " which misses or hasn't activated Alt/NumLock Modifiers.  Often not defined
 " within termcap/terminfo and we should map the character printed on the keys.
@@ -250,6 +260,8 @@ if has("autocmd")
   autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags  
   autocmd FileType php set omnifunc=phpcomplete#CompletePHP  
   autocmd FileType c set omnifunc=ccomplete#Complete  
+  autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+  autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 endif " has("autocmd")
 
 " Changed default required by SuSE security team--be aware if enabling this
@@ -292,6 +304,15 @@ nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+nmap <F5> <Plug>(JavaComplete-Imports-Add)
+imap <F5> <Plug>(JavaComplete-Imports-Add)
+nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
