@@ -82,6 +82,12 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'artur-shaik/vim-javacomplete2'
 
+Plug 'leafgarland/typescript-vim'
+
+Plug 'pangloss/vim-javascript'
+
+Plug 'clausreinke/typescript-tools.vim', { 'do': 'npm install' }
+
 " Initialize plugin system
 call plug#end()
 
@@ -278,6 +284,7 @@ syntax enable
 
 let g:pydiction_location='~/.vim/tools/pydiction/complete-dict'
 "let g:pydiction_menu_height=3
+let javascript_enable_domhtmlcss = 1
 
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
